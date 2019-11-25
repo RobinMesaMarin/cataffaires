@@ -1,0 +1,27 @@
+body {
+    width: 100%;
+    background-image: url("img/bg.mp4");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    background-color: black;
+}
+
+.content {
+    z-index: 1;
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+
+#myVideo {
+position: fixed;
+right: 0;
+bottom: 0;
+min-width: 100%;
+min-height: 100%;
+}
+
+a {
+    color: red;
+}
