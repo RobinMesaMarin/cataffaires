@@ -1,27 +1,22 @@
 body {
+    padding: 2%;
     width: 100%;
-    background-image: url("img/bg.mp4");
+    background-image: url("img/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.6;
-    background-color: black;
+    background-attachment: fixed;
+    color:white;
 }
 
-.content {
-    z-index: 1;
-    color: #f1f1f1;
-    width: 100%;
-    padding: 20px;
-  }
-
-#myVideo {
-position: fixed;
-right: 0;
-bottom: 0;
-min-width: 100%;
-min-height: 100%;
+body h1 {
+    text-align: center;
+    margin-top:2%
 }
 
 a {
     color: red;
+}
+
+a:hover{
+    color:darkred;
 }
