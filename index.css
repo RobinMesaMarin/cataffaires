@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     padding: 2%;
-    width: 100%;
-    background-image: url("img/bg.jpg");
+    background-image: url("img/bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
 }
 
 body h1 {
@@ -21,4 +24,15 @@ a:hover{
     color:darkred;
 }
 
+.item{
+    width: 90vw;
+}
 li:before { content: '💀'; margin-left: -20px; margin-right: 10px; } 
+
+title, h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+}
+
+.smoll {
+    font-size: 12px;
+}
