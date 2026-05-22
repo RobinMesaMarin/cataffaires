@@ -6,261 +6,21 @@
     <meta name="description" content="Archive personnelle des catatracts trouvés dans les catacombes de Paris.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;500&display=swap">
     <link rel="stylesheet" href="index.css">
-    <style>
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            letter-spacing: 0.06em;
-            color: var(--color-text-muted);
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            transition: color 0.15s ease;
-        }
-
-        .back-link:hover {
-            color: var(--color-accent);
-            text-decoration: none;
-        }
-
-        .page-intro {
-            background: var(--bg-glass);
-            backdrop-filter: blur(var(--blur));
-            -webkit-backdrop-filter: blur(var(--blur));
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius);
-            padding: 1.2rem 1.8rem;
-            margin: 0.8rem 0 0;
-            color: #c0b8a8;
-            font-style: italic;
-        }
-
-        /* ── Recherche ── */
-
-        .search-bar {
-            margin: 1rem 0 0;
-        }
-
-        #search {
-            width: 100%;
-            background: var(--bg-glass);
-            backdrop-filter: blur(var(--blur));
-            -webkit-backdrop-filter: blur(var(--blur));
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius);
-            padding: 0.65rem 1.1rem;
-            color: var(--color-text);
-            font-family: 'Roboto', sans-serif;
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.2s ease;
-        }
-
-        #search::placeholder {
-            color: var(--color-text-muted);
-        }
-
-        #search:focus {
-            border-color: rgba(var(--color-accent-rgb), 0.45);
-        }
-
-        .no-results {
-            display: none;
-            color: var(--color-text-muted);
-            font-style: italic;
-            font-size: 0.9rem;
-            padding: 1rem 0;
-        }
-
-        /* ── Grille ── */
-
-        .tracts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-            margin-bottom: 5rem;
-        }
-
-        /* ── Cartes ── */
-
-        .tract-card {
-            background: var(--bg-glass);
-            backdrop-filter: blur(var(--blur));
-            -webkit-backdrop-filter: blur(var(--blur));
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: border-color 0.2s ease;
-        }
-
-        .tract-card:hover {
-            border-color: rgba(var(--color-accent-rgb), 0.25);
-        }
-
-        .tract-images {
-            display: flex;
-            gap: 2px;
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        .tract-images a {
-            flex: 1;
-            min-width: 0;
-            display: block;
-            overflow: hidden;
-            cursor: zoom-in;
-        }
-
-        .tract-images img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.25s ease;
-        }
-
-        .tract-images a:hover img {
-            transform: scale(1.04);
-        }
-
-        .tract-body {
-            padding: 1rem 1.2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            flex: 1;
-        }
-
-        .tract-card-header {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .tract-title {
-            font-family: 'Cinzel', serif;
-            font-size: 0.92rem;
-            color: var(--color-accent);
-            margin: 0;
-            letter-spacing: 0.03em;
-            line-height: 1.4;
-        }
-
-        .tract-date {
-            font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
-            color: var(--color-text-muted);
-            letter-spacing: 0.06em;
-        }
-
-        .tract-dates {
-            display: flex;
-            flex-direction: column;
-            gap: 0.1rem;
-        }
-
-        .tract-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.2rem 1rem;
-            font-size: 0.82rem;
-            color: var(--color-text-muted);
-            border-top: 1px solid var(--border-glass);
-            padding-top: 0.5rem;
-            margin-top: auto;
-        }
-
-        .tract-meta span { display: flex; align-items: baseline; gap: 0.3rem; }
-        .tract-location::before { content: '📍'; }
-        .tract-blaze::before    { content: '✍️'; }
-        .tract-num::before      { content: '🔢'; }
-
-        /* ── Lightbox ── */
-
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.93);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s ease;
-        }
-
-        .lightbox.open {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .lightbox img {
-            max-width: 90vw;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 4px;
-            display: block;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 1rem;
-            right: 1.2rem;
-            background: none;
-            border: none;
-            color: var(--color-text-muted);
-            font-size: 1.8rem;
-            line-height: 1;
-            cursor: pointer;
-            transition: color 0.15s ease;
-            padding: 0;
-        }
-
-        .lightbox-close:hover { color: #ffffff; }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--color-text-muted);
-            font-size: 1.6rem;
-            width: 3rem;
-            height: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: color 0.15s ease, background 0.15s ease;
-        }
-
-        .lightbox-nav:hover { color: #ffffff; background: rgba(0, 0, 0, 0.8); }
-        .lightbox-nav:disabled { opacity: 0.15; cursor: default; pointer-events: none; }
-        .lightbox-nav:disabled:hover { color: var(--color-text-muted); background: rgba(0, 0, 0, 0.5); }
-
-        #lb-prev { left: 1rem; }
-        #lb-next { right: 1rem; }
-
-        @media (max-width: 480px) {
-            .tracts-grid { grid-template-columns: 1fr; }
-            .lightbox-nav { display: none; }
-        }
-    </style>
+    <meta property="og:title" content="Ktaffaires — Archive des tracts">
+    <meta property="og:description" content="Archive personnelle des catatracts trouvés dans les catacombes de Paris.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0d0d0d">
     <title>💀 Catatracts 💀</title>
 </head>
 
 <body>
     <main>
-        <a href="index.html" class="back-link">← Retour au guide</a>
+        <nav class="site-nav" aria-label="Navigation principale">
+            <a href="index.html">Guide</a>
+            <a href="tracts.html" class="active">Tracts</a>
+        </nav>
 
         <h1>Archive des tracts</h1>
 
@@ -301,6 +61,13 @@
             return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         }
 
+        function maybeUncertain(value, incertitudes, champ) {
+            const s = esc(value);
+            return incertitudes.includes(champ)
+                ? `<span class="uncertain" title="Information incertaine">${s}</span>`
+                : s;
+        }
+
         /* ── Rendu des cartes ── */
 
         function renderDates(tract) {
@@ -316,28 +83,34 @@
         }
 
         function renderCard(tract) {
+            const inc = tract.incertitudes || [];
+
             const images = tract.images.map((img, i) => {
                 const side = tract.images.length > 1 ? (i === 0 ? ' — recto' : ' — verso') : '';
                 return `<a href="img/tracts/${esc(img)}" target="_blank" rel="noopener noreferrer">
-                    <img src="img/tracts/${esc(img)}" alt="${esc(tract.titre)}${side}" loading="lazy">
+                    <img src="img/tracts/${esc(img)}" alt="${esc(tract.titre)}${side}" loading="lazy" height="180">
                 </a>`;
             }).join('');
 
-            const blaze = tract.blaze
-                ? (tract.blaze_instagram
-                    ? `<a href="${esc(tract.blaze_instagram)}" target="_blank" rel="noopener noreferrer">${esc(tract.blaze)}</a>`
-                    : esc(tract.blaze))
-                : '—';
+            const blazeText = tract.blaze ? maybeUncertain(tract.blaze, inc, 'blaze') : '—';
+            const blaze = tract.blaze && tract.blaze_instagram
+                ? `<a href="${esc(tract.blaze_instagram)}" target="_blank" rel="noopener noreferrer">${blazeText}</a>`
+                : blazeText;
+
+            const notes = tract.notes
+                ? `<p class="tract-notes">${esc(tract.notes)}</p>`
+                : '';
 
             return `<div class="tract-card">
                 <div class="tract-images">${images}</div>
                 <div class="tract-body">
                     <div class="tract-card-header">
-                        <h3 class="tract-title">${esc(tract.titre)}</h3>
+                        <h3 class="tract-title">${maybeUncertain(tract.titre, inc, 'titre')}</h3>
                         ${renderDates(tract)}
                     </div>
+                    ${notes}
                     <div class="tract-meta">
-                        <span class="tract-location" title="Lieu">${tract.lieu ? esc(tract.lieu) : '—'}</span>
+                        <span class="tract-location" title="Lieu">${tract.lieu ? maybeUncertain(tract.lieu, inc, 'lieu') : '—'}</span>
                         <span class="tract-blaze" title="Blaze">${blaze}</span>
                         <span class="tract-num" title="Numérotation">${tract.numerotation ? esc(tract.numerotation) : '—'}</span>
                     </div>
@@ -376,6 +149,8 @@
                 if (match) visible++;
             });
 
+            const total = allTracts.length;
+            document.getElementById('tract-count').textContent = q ? `${visible} / ${total}` : total;
             document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
         });
 

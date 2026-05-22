@@ -7,7 +7,9 @@
     "blaze": "MeegO",
     "blaze_instagram": null,
     "numerotation": "13/50",
-    "images": ["image16.jpg"]
+    "images": [
+      "image16.webp"
+    ]
   },
   {
     "titre": "Sortie des ktas 3D",
@@ -17,17 +19,10 @@
     "blaze": "Norage",
     "blaze_instagram": null,
     "numerotation": "9/24",
-    "images": ["image30.jpg", "image32.jpg"]
-  },
-  {
-    "titre": "Jigsaw",
-    "date_posee": null,
-    "date_trouvee": null,
-    "lieu": "Catapulte ?",
-    "blaze": "Gazli",
-    "blaze_instagram": "https://www.instagram.com/gazli_kta/",
-    "numerotation": null,
-    "images": ["image12.jpg", "image19.jpg"]
+    "images": [
+      "image30.webp",
+      "image32.webp"
+    ]
   },
   {
     "titre": "I will shit on everything you love",
@@ -37,7 +32,10 @@
     "blaze": "Shiro",
     "blaze_instagram": "https://www.instagram.com/shiro_kta/",
     "numerotation": null,
-    "images": ["image29.jpg", "image4.jpg"]
+    "images": [
+      "image29.webp",
+      "image4.webp"
+    ]
   },
   {
     "titre": "Crawl",
@@ -47,17 +45,26 @@
     "blaze": "Soca",
     "blaze_instagram": null,
     "numerotation": null,
-    "images": ["image25.jpg", "image2.jpg"]
+    "images": [
+      "image25.webp",
+      "image2.webp"
+    ]
   },
   {
-    "titre": "Gnome (?)",
+    "titre": "Gnome",
+    "incertitudes": [
+      "titre"
+    ],
     "date_posee": "février 2024",
     "date_trouvee": "août 2024",
     "lieu": "Bunker",
     "blaze": null,
     "blaze_instagram": null,
     "numerotation": null,
-    "images": ["image18.jpg", "image11.jpg"]
+    "images": [
+      "image18.webp",
+      "image11.webp"
+    ]
   },
   {
     "titre": "Coupe oryctognostique du sol de la plaine du midi, Paris",
@@ -65,39 +72,26 @@
     "date_trouvee": "mars 2024",
     "lieu": "Electro",
     "blaze": "Zykos",
+    "notes":"Posé par Zykos juste à côté d'un tract de sa compagne, Taline lors du ktarnaval 2024",    
     "blaze_instagram": "https://www.instagram.com/zykos_brikabrac/",
     "numerotation": null,
-    "images": ["image28.jpg", "image8.jpg"]
+    "images": [
+      "image28.webp",
+      "image8.webp"
+    ]
   },
   {
     "titre": "Marcel et Paulette se querellent",
-    "date_posee": null,
+    "date_posee": "mars 2024",
     "date_trouvee": "mars 2024",
     "lieu": "Electro",
     "blaze": "Taline",
+    "notes":"Posé par Taline juste à côté d'un tract de son compagnon, Zykos lors du ktarnaval 2024",
     "blaze_instagram": "https://www.instagram.com/p/DICjQz7s2CU/",
     "numerotation": null,
-    "images": ["image1.jpg"]
-  },
-  {
-    "titre": "Pète la gueule du violeur du coin STP",
-    "date_posee": null,
-    "date_trouvee": "juin 2024",
-    "lieu": "Alentours Hellen Keller",
-    "blaze": null,
-    "blaze_instagram": null,
-    "numerotation": null,
-    "images": ["image27.jpg"]
-  },
-  {
-    "titre": "Chèvre ktaclean",
-    "date_posee": null,
-    "date_trouvee": "juin 2024",
-    "lieu": "Rue de l'ouest",
-    "blaze": "Soyeux",
-    "blaze_instagram": "https://www.instagram.com/aventurier_soyeux/",
-    "numerotation": "1/2",
-    "images": ["image15.jpg"]
+    "images": [
+      "image1.webp"
+    ]
   },
   {
     "titre": "Linogravure",
@@ -107,67 +101,82 @@
     "blaze": "Frankreich",
     "blaze_instagram": "https://www.instagram.com/franky_kta/",
     "numerotation": "6/10",
-    "images": ["image9.jpg", "image6.jpg"]
+    "images": [
+      "image9.webp",
+      "image6.webp"
+    ]
   },
   {
-    "titre": "Crane articulé (chien ?)",
+    "titre": "Pète la gueule du violeur du coin STP",
+    "date_posee": null,
+    "date_trouvee": "juin 2024",
+    "lieu": "Alentours Hellen Keller",
+    "blaze": null,
+    "blaze_instagram": null,
+    "numerotation": null,
+    "images": [
+      "image27.webp"
+    ]
+  },
+  {
+    "titre": "Chèvre ktaclean",
+    "date_posee": null,
+    "date_trouvee": "juin 2024",
+    "lieu": "Rue de l'ouest",
+    "blaze": "Soyeux",
+    "blaze_instagram": "https://www.instagram.com/aventurier_soyeux/",
+    "numerotation": "1/2",
+    "images": [
+      "image15.webp"
+    ]
+  },
+  {
+    "titre": "Crane articulé (chien)",
+    "incertitudes": [
+      "titre"
+    ],
     "date_posee": "février 2025",
     "date_trouvee": "mars 2025",
     "lieu": "Pixel",
     "blaze": "Cahuete",
     "blaze_instagram": "https://www.instagram.com/cahuete.nrj/",
     "numerotation": null,
-    "images": ["image23.jpg", "image5.jpg"]
+    "images": [
+      "image23.webp",
+      "image5.webp"
+    ]
   },
   {
     "titre": "Canard enchainé",
     "date_posee": "mai 2025",
     "date_trouvee": null,
     "lieu": "Boulevard de l'hôpital côté du Midi",
-    "blaze": "Rife (?)",
+    "blaze": "Rife",
+    "incertitudes": [
+      "blaze"
+    ],
     "blaze_instagram": null,
     "numerotation": null,
-    "images": ["image17.jpg", "image10.jpg"]
+    "images": [
+      "image17.webp",
+      "image10.webp"
+    ]
   },
   {
-    "titre": "Sarko",
-    "date_posee": null,
+    "titre": "Les catacombes, histoire du Paris souterrain",
+    "date_posee": "septembre 2025",
     "date_trouvee": null,
-    "lieu": "Fagon",
-    "blaze": "V",
-    "blaze_instagram": "https://www.instagram.com/v_ktas/",
-    "numerotation": "3/6",
-    "images": ["image24.jpg", "image3.jpg"]
-  },
-  {
-    "titre": "Plaque soleil impression 3D",
-    "date_posee": null,
-    "date_trouvee": null,
-    "lieu": "Rue de la voie verte (entre Kraken et Plage)",
-    "blaze": null,
-    "blaze_instagram": null,
+    "lieu": "Alentours attrape-rêve",
+    "incertitudes": [
+      "lieu"
+    ],
+    "blaze": "Aggripa",
+    "blaze_instagram": "https://www.instagram.com/agrippa1777/",
     "numerotation": null,
-    "images": ["image7.jpg"]
-  },
-  {
-    "titre": "Carte postale — Industrielle",
-    "date_posee": null,
-    "date_trouvee": null,
-    "lieu": "Rue de la voie verte (entre Brune et Traknar)",
-    "blaze": null,
-    "blaze_instagram": null,
-    "numerotation": null,
-    "images": ["image14.jpg"]
-  },
-  {
-    "titre": "Carte postale — Les belles images de Provence",
-    "date_posee": null,
-    "date_trouvee": null,
-    "lieu": "Rue de la voie verte (entre Brune et Traknar)",
-    "blaze": null,
-    "blaze_instagram": null,
-    "numerotation": null,
-    "images": ["image35.jpg", "image21.jpg"]
+    "images": [
+      "image22.webp",
+      "image34.webp"
+    ]
   },
   {
     "titre": "G tek",
@@ -177,7 +186,92 @@
     "blaze": "Zephyr",
     "blaze_instagram": "https://www.instagram.com/zephyr.ppt/",
     "numerotation": "6/10",
-    "images": ["image20.jpg"]
+    "images": [
+      "image20.webp"
+    ]
+  },
+  {
+    "titre": "Œil fontaine des Chartreux",
+    "date_posee": "Noté 20 Novembre 2025, mais probablement plus Décembre 2025",
+    "date_trouvee": "décembre 2025",
+    "lieu": "Lao Palao",
+    "blaze": "Evios",
+    "incertitudes": [
+      "blaze"
+    ],
+    "blaze_instagram": null,
+    "numerotation": null,
+    "images": [
+      "image26.webp",
+      "image33.webp"
+    ]
+  },
+  {
+    "titre": "Jigsaw",
+    "date_posee": null,
+    "date_trouvee": null,
+    "lieu": "Catapulte",
+    "incertitudes": [
+      "lieu"
+    ],
+    "blaze": "Gazli",
+    "blaze_instagram": "https://www.instagram.com/gazli_kta/",
+    "numerotation": null,
+    "images": [
+      "image12.webp",
+      "image19.webp"
+    ]
+  },
+  {
+    "titre": "Sarko",
+    "date_posee": null,
+    "date_trouvee": null,
+    "lieu": "Fagon",
+    "blaze": "V",
+    "notes":"Le tract contient un tag NFC en son sein qui permet d'afficher une vue en réalité augmentée de la salle Sarko",
+    "blaze_instagram": "https://www.instagram.com/v_ktas/",
+    "numerotation": "3/6",
+    "images": [
+      "image24.webp",
+      "image3.webp"
+    ]
+  },
+  {
+    "titre": "Plaque soleil impression 3D",
+    "date_posee": null,
+    "date_trouvee": null,
+    "lieu": "Rue de la voie verte (entre Kraken et Plage)",
+    "blaze": null,
+    "blaze_instagram": null,
+    "numerotation": null,
+    "images": [
+      "image7.webp"
+    ]
+  },
+  {
+    "titre": "Carte postale — Industrielle",
+    "date_posee": null,
+    "date_trouvee": null,
+    "lieu": "Rue de la voie verte (entre Brune et Traknar)",
+    "blaze": null,
+    "blaze_instagram": null,
+    "numerotation": null,
+    "images": [
+      "image14.webp"
+    ]
+  },
+  {
+    "titre": "Carte postale — Les belles images de Provence",
+    "date_posee": null,
+    "date_trouvee": null,
+    "lieu": "Rue de la voie verte (entre Brune et Traknar)",
+    "blaze": null,
+    "blaze_instagram": null,
+    "numerotation": null,
+    "images": [
+      "image35.webp",
+      "image21.webp"
+    ]
   },
   {
     "titre": "Pillier",
@@ -187,7 +281,9 @@
     "blaze": "VillaVince",
     "blaze_instagram": "https://www.instagram.com/villavince75/",
     "numerotation": "186",
-    "images": ["image13.jpg"]
+    "images": [
+      "image13.webp"
+    ]
   },
   {
     "titre": "Inca crew",
@@ -197,26 +293,8 @@
     "blaze": null,
     "blaze_instagram": null,
     "numerotation": null,
-    "images": ["image31.jpg"]
-  },
-  {
-    "titre": "Les catacombes, histoire du Paris souterrain",
-    "date_posee": "septembre 2025",
-    "date_trouvee": null,
-    "lieu": "Alentours attrape-rêve (?)",
-    "blaze": "Aggripa",
-    "blaze_instagram": "https://www.instagram.com/agrippa1777/",
-    "numerotation": null,
-    "images": ["image22.jpg", "image34.jpg"]
-  },
-  {
-    "titre": "Œil fontaine des Chartreux",
-    "date_posee": null,
-    "date_trouvee": "décembre 2025",
-    "lieu": "Lao Palao",
-    "blaze": "Evios (?)",
-    "blaze_instagram": null,
-    "numerotation": null,
-    "images": ["image26.jpg", "image33.jpg"]
+    "images": [
+      "image31.webp"
+    ]
   }
 ]
