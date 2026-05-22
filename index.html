@@ -1,415 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guide pratique pour descendre dans les catacombes non officielles de Paris : législation, équipement, tenue, jargon cataphile et ressources utiles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="index.css">
-    <style>
-       
-    </style>
-    <title>💀 Cataffaires 💀</title>
+<title>💀 Cataffaires 💀</title>
 </head>
 
 <body>
-    <h1>
-        Introduction aux catas
-    </h1>
-    <h2>
-        🦴 Disclaimer
-    </h2>
-    <ul>
-        <p>
-            <li class="item">
-                Descendre dans les catacombes non officielles de Paris est un acte illégal punissable de 60€* d'amende,
-                les cata-flics font des descentes occasionnellement.
-                <div class="smoll">
-                    *A l'exception des sous-terrain du Val-de-Grâce ou en théorie on est sur 15 000€ et un an d'emprisonnement
-                    (intrusion frauduleuse dans un lieu affecté à l'autorité militaire)
-                    (même si en vrai, à ma connaissance personne ne s'est fait infligé cette amende)
-                </div>
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Cependant, embarquer des ossements c'est de la profanation de tombe, l'amende s'élève alors au maximum à
-                5 ans d'emprisonnement et 75 000€ d'amende
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                C'est un lieu potentiellement dangereux d'autant plus que l'intervention de secours y est pratiquement
-                impossible, il faut donc rester prudent
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Il est possible de contracter la <a target="_blank"
-                href="https://fr.wikipedia.org/wiki/Leptospirose">Leptospirose</a> (en ayant des plaies au contact
-                d'urine de rats), en France il y a à peu près 5 cas par million d'habitants et ça se soigne très bien
-                par antibiotiques. Les symptômes sont les mêmes que la grippe, le temps d'incubation est d'environ 3
-                semaines, donc si tu as de la fièvre 3 semaines après les catacombes n'hésites pas à consulter en
-                expliquant que tu es descendu récemment
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                On évite tant que possible de passer par les égouts, on préfère passer par les galeries techniques (les galeries qui font passer les câbles électriques/fibre/téléphonie ...).
-                Pour des raisons d'odeurs, de dangerosité et de "les plaques d'égouts sont vachement plus lourdes quand même"
-                
-            </li>
-        </p>
-    </ul>
-    <h2>
-        🦴 Que mettre dans son sac ?
-    </h2>
-    <ul>
-        <h3>Les essentiels</h3>
-        <p>
-            <li class="item">
-                Une carte d'identité, vu qu'il y a une chance qu'on se fasse contrôler sous terre, sans papiers
-                d'identité c'est potentiellement la garde à vue
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                De la nourriture, plus que ce que tu vas consommer, idéalement des aliments qui font un minimum de
-                déchets
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Des boissons, plus que ce que tu vas consommer également, attention pas de conteneurs en verres, ils
-                risqueraient de se briser dans ton sac, bières en cannette et les mélanges se font en surface dans des
-                bouteilles en plastique.
-                (Sur ce point j'ajouterais que mettre ses cannettes de bières dans des sacs de congélations est bien plus agréable,
-                ainsi si une se perce on n'innonde pas son sac de bière)
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                De l'eau
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Une lampe frontale, pas de lampe de portable ou de lampe torche à main
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Un sac à dos auquel tu ne tiens pas trop pour mettre tout ça (petit) sac de rando c'est parfait, pas de
-                sacs à main ou sacoches
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Ton portable (chargé à bloc)
-            </li>
-        </p>
 
-        <h3>Les bonus</h3>
-        <p>
-            <li class="item">
-                Des batteries portables
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Des bougies
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Des briquets
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Des sacs poubelle, généralement il suffit qu'une personne dans le groupe pense à en descendre, pas la
-                peine de venir à 25 avec des sacs dans tous les sens
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Du gel hydroalcoolique, les gens sans gants seront amenés à toucher des ossements humains, c'est mieux de
-                se laver les mains avant de bouffer
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Une enceinte portable, là aussi en théorie pas besoin d'en descendre 25, mais c'est toujours
-                bien d'en avoir une de secours
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Si jamais tu descends avec des chaussures qui vont prendre l'eau, une paire de chaussettes de rechange peut s'avérer salvatrice pour le retour à la surface
-            </li>
-        </p>
+    <h1>Introduction aux catas</h1>
 
+    <main>
+
+    <nav id="toc" aria-label="Sommaire">
+        <p class="toc-title">Sommaire</p>
+        <ul>
+            <li><a href="#disclaimer">Disclaimer</a></li>
+            <li><a href="#sac">Que mettre dans son sac ?</a></li>
+            <li><a href="#tenue">Comment s'habiller ?</a></li>
+            <li><a href="#remarques">Remarques diverses</a></li>
+            <li><a href="#jargon">Jargon</a></li>
+            <li><a href="#histoire">Histoire rapide</a></li>
+            <li><a href="#liens">Quelques liens</a></li>
+        </ul>
+    </nav>
+
+    <h2 id="disclaimer">🦴 Disclaimer</h2>
+    <ul>
+        <li class="item">
+            Descendre dans les catacombes non officielles de Paris est un acte illégal punissable de 135€* d'amende,
+            les cata-flics font des descentes occasionnellement.
+            <span class="smoll">
+                *À l'exception des sous-terrain du Val-de-Grâce où en théorie on est sur 15 000€ et un an d'emprisonnement
+                (<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028345516" target="_blank" rel="noopener noreferrer">intrusion frauduleuse dans un lieu affecté à l'autorité militaire</a>)
+                (même si en vrai, à ma connaissance personne ne s'est fait infliger cette amende)
+            </span>
+        </li>
+        <li class="item">
+            Cependant, embarquer des ossements c'est de la <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070719/LEGISCTA000006165306/2020-12-14" target="_blank" rel="noopener noreferrer">profanation de tombe</a>, l'amende s'élève alors au maximum à
+            5 ans d'emprisonnement et 75 000€ d'amende
+        </li>
+        <li class="item">
+            C'est un lieu potentiellement dangereux d'autant plus que l'intervention de secours y est pratiquement
+            impossible, il faut donc rester prudent
+        </li>
+        <li class="item">
+            Il est possible de contracter la <a href="https://fr.wikipedia.org/wiki/Leptospirose" target="_blank" rel="noopener noreferrer">Leptospirose</a> (en ayant des plaies au contact
+            d'urine de rats), en France il y a à peu près 5 cas par million d'habitants et ça se soigne très bien
+            par antibiotiques. Les symptômes sont les mêmes que la grippe, le temps d'incubation est d'environ 3
+            semaines, donc si tu as de la fièvre 3 semaines après les catacombes n'hésite pas à consulter en
+            expliquant que tu es descendu récemment
+        </li>
+        <li class="item">
+            On évite tant que possible de passer par les égouts, on préfère passer par les galeries techniques (les galeries qui font passer les câbles électriques/fibre/téléphonie ...).
+            Pour des raisons d'odeurs, de dangerosité et de "les plaques d'égouts sont vachement plus lourdes quand même"
+        </li>
     </ul>
 
-    <h2>
-        🦴 Comment s'habiller ?
-    </h2>
+    <h2 id="sac">🦴 Que mettre dans son sac ?</h2>
+    <h3>Les essentiels</h3>
     <ul>
-        <p>
-            Il fait sensiblement la même température toute l'année ~13°, avec le fait qu'on bouge pas mal on est
-            donc souvent en t-shirt
-        </p>
-        <p>
-            <li class="item">
-                Un pull pour l'extérieur, il risque de faire froid à la sortie et même l'été se balader avec le t-shirt
-                dégeulasse c'est pas bien jojo
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Ne t'encombres pas avec des manteaux ou gros pulls, ils seront plus des boulets qu'autre chose sous
-                terre
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Un jean auquel tu ne tiens pas trop, même s'il a peu de chance de se déchirer il risque de se faire
-                malmener dans les chatières ou autre. Pas de jogging, trop fragile il se déchirerait
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                De même pour le t-shirt, n'en prends pas un de grande valeur
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Des chaussures qui permettent de bien marcher, basket, chaussures de randonnée sont très bien,
-                mais tu auras certainement les pieds mouillés, des cuissardes sont
-                recommandées si tu ne veux pas te mouiller les petons (les bottes sont une fausse bonne idée, elles vont prendre l'eau
-                à coup sûr, autant avoir des chaussures où l'eau va pouvoir s'évacuer)
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Si tu as des gants, c'est toujours plus agréable mais clairement pas obligatoire
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Un couvre-chef (casque, casquette, bonnet, etc.) peut être utile éviter de se cogner la tête trop violemment.
-            </li>
-        </p>
-    </ul>
-    <h2>
-        🦴 Remarques diverses
-    </h2>
-    <ul>
-        <p>
-            <li class="item">
-                Les catacombes sont un lieu privilégié et préservé (à peu près), continuons de le préserver et ne
-                laissons aucun déchet dérière nous, mégots de cigarette, emballage de nourriture, etc. Tout remonte à la
-                surface, au-delà de la propreté des lieux laisser de la nourriture fait que des rats s'installent
-                progressivement et ils n'ont absolument rien à y faire fait donc attention à ne rien jeter !
-            </li>
-        </p>
-
-        <p>
-            <li class="item">
-                On évite généralement de faire ses besoins dans les catacombes, même s'il arrive qu'on y soit contraint,
-                pensez à bien faire vos commissions avant de descendre, ce sera toujours plus propre !
-            </li>
-        </p>
-
-        <p>
-            <li class="item">
-                En fonction du parcours effectué on peut être amené à marcher dans l'eau, potentiellement jusqu'en haut
-                des cuisses (même si la plupart du temps ça ne dépassera pas le genou)
-            </li>
-        </p>
-
-        <p>
-            <li class="item">
-                On m'a déjà posé la question mais oui, on peut fumer dans les catas, il faut penser à ramasser ses mégots
-            </li>
-        </p>
-
-        <p>
-            <li class="item">
-                Il se peut par moment que l'on soit à une longue distance de la sortie (le maximum doit être 2h, 2h30), si tu commences à
-                fatiguer (ou si simplement tu veux sortir), surtout n'hésite pas à le mentionner au guide dès les premiers signes, car même
-                s'il se dirige vers la sortie immédiatement il peut rester une trotte à parcourir !
-            </li>
-        </p>
+        <li class="item">
+            Une carte d'identité, vu qu'il y a une chance qu'on se fasse contrôler sous terre, sans papiers
+            d'identité c'est potentiellement la garde à vue
+        </li>
+        <li class="item">
+            De la nourriture, plus que ce que tu vas consommer, idéalement des aliments qui font un minimum de déchets
+        </li>
+        <li class="item">
+            Des boissons, plus que ce que tu vas consommer également, attention pas de conteneurs en verre, ils
+            risqueraient de se briser dans ton sac, bières en cannette et les mélanges se font en surface dans des
+            bouteilles en plastique.
+            (Sur ce point j'ajouterais que mettre ses cannettes de bières dans des sacs de congélation est bien plus agréable,
+            ainsi si une se perce on n'inonde pas son sac de bière)
+        </li>
+        <li class="item">De l'eau</li>
+        <li class="item">Une lampe frontale, pas de lampe de portable ou de lampe torche à main</li>
+        <li class="item">
+            Un sac à dos auquel tu ne tiens pas trop pour mettre tout ça (petit) sac de rando c'est parfait, pas de
+            sacs à main ou sacoches
+        </li>
+        <li class="item">Ton portable (chargé à bloc)</li>
     </ul>
 
-    <h2>
-        🦴 Jargon
-    </h2>
+    <h3>Les bonus</h3>
     <ul>
-        <p>
-            <li class="item">
-                Acet' (ou aceto'): Une <a href="https://fr.wikipedia.org/wiki/Lampe_%C3%A0_ac%C3%A9tyl%C3%A8ne" target="_blank">lampe à acétyène</a>
-                qui est un moyen de s'éclairer assez peu commun sous terre, car peu pratique, mais il encore possible d'en croiser
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Catablaz: Le nom d'un cataphile après son baptême, il ne répondra que sous ce nom sous terre, ceux qui descendent sans être 
-                baptisés ont d'office le catablaz <i>"touriste"</i> ou <i>"ristou"</i>. Les baptêmes ont traditionellement lieu à la fontaine des Chartreux.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Cataconnard: Un cataphile connard 🙃
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Cataflic: Les policiers de
-                <a
-                    href="https://www.prefecturedepolice.interieur.gouv.fr/presentation/les-directions-et-services/directions-de-police-active/la-direction-de-lordre-public-et-de-la-circulation"
-                    target="_blank">
-                    la direction de l'ordre public et de la circulation</a>
-                qui descendent occasionnellement dans les catacombes (généralement depuis l'escalier de la Santé)
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Catalampe: Une <a href="https://live.staticflickr.com/3755/8874648611_267016bb14_n.jpg" target="_blank">lampe de fortune</a>
-                confectionnée avec une cannette de bière et une bougie
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Cataphile : Une personne qui descend régulièrement dans les catas
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Catatract (ou tract): Tract déposé dans les catacombes, initialement destiné à communiquer sous terre en se laissant des mots
-                à des endroits convenus, ils ont aujourd'hui perdu cette fonction pratique et sont des petits mots/ photos laissés par
-                un cataphile pour que quelqu'un le trouve.
-                <a href="https://docs.google.com/spreadsheets/d/1_I7QZr18JjoJyP30XxNQuaIdOms53pV-Pz_0sdDS4m4/edit?usp=sharing" target="_blank">A titre d'exemple voici une liste des tracts que j'ai pu trouver</a>
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Chatière: Une chatière est un passage étroit creusé par les cataphiles pour contourner les murs et autres injections de L'IGC.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                GRS: Grand Réseau Sud, le plus gros réseau d'anciennes carrières sous Paris, ce réseau court du Jardin du Luxembourg à Montrouge (au par avant il était possible d'aller jusqu'à Cachan par le GRS), il existe d'autres réseaux sous Paris tel que le "13" ou le "16" (par rapport aux arrondissements où il se situent)
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Phiphi (ou Fifi): Surnom de Philibert Aspairt (ou Asper) un carrier du Val de Grâce qui serait descendu dans les catacombes avec l'objectif de voler de l'alcool des Chartreux, il aurait cassé sa lampe sous terre et aurait été retrouvé mort le 2 Floréal de l'an XII (2 Mai 1804), une tombe est errigée à l'endroit où il aurait été retrouvée. C'est un sempiternel débat de cataphiles de savoir si Phiphi a réellement existé ou si c'est ce serait une invention d'<a href=https://fr.wikipedia.org/wiki/Louis-%C3%89tienne_H%C3%A9ricart_de_Thury target="_blank">Héricart de Thury</a>
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Fontis: Un <a href="https://fr.wikipedia.org/wiki/Fontis" target="_blank">fontis</a> est un effondrement du ciel de carrière. Ce phénomène très dangereux guette toutes les carrières non entretenues.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                IGC: <a href="https://fr.wikipedia.org/wiki/Inspection_g%C3%A9n%C3%A9rale_des_carri%C3%A8res" target="_blank">Inspection Générale des Carrières</a> fut fondée en 1777 pour répertorier et consolider les vides de carrières en Ile-de-France.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Injection: L'injection de béton est la méthode moderne de consolidation des carrières utilisée par L'IGC. C'est aussi le moyen retenu pour fermer les accès.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Katasprint: Un Katasprint est une course organisée entre deux points donnés, le choix de l'itinéraire étant libre. Ainsi un cataphile qui court n'est pas forcément un cataphile pris en chasse par la olice.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Remblai: Terre qui constitue la majorité des réseaux sous-terrain.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Squat: Une salle qui se situe dans un couloir.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Surfacien: Un habitant de la surface.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Sylvie: Major Sylvie Gautron de la DOPC, la cheffe des ktaflics, elle est "aimée et mal aimée en même temps", son prédécesseur Jean-Claude Saratte(qui a pris sa retraite en Juin 2000) privilégiait beaucoup la pédagogie à la répression.
-            </li>
-        </p>
-        <p>
-            <li class="item">
-                Touriste (ou Ristou): nom donné aux cataphiles lors de le leurs premières descente.
-            </li>
-        </p>
+        <li class="item">Des batteries portables</li>
+        <li class="item">Des bougies</li>
+        <li class="item">Des briquets</li>
+        <li class="item">
+            Des sacs poubelle, généralement il suffit qu'une personne dans le groupe pense à en descendre, pas la
+            peine de venir à 25 avec des sacs dans tous les sens
+        </li>
+        <li class="item">
+            Du gel hydroalcoolique, les gens sans gants seront amenés à toucher des ossements humains, c'est mieux de
+            se laver les mains avant de bouffer
+        </li>
+        <li class="item">
+            Une enceinte portable, là aussi en théorie pas besoin d'en descendre 25, mais c'est toujours
+            bien d'en avoir une de secours
+        </li>
+        <li class="item">
+            Si jamais tu descends avec des chaussures qui vont prendre l'eau, une paire de chaussettes de rechange
+            peut s'avérer salvatrice pour le retour à la surface
+        </li>
     </ul>
 
-    <h2>🦴 Histoire rapide</h2>
+    <h2 id="tenue">🦴 Comment s'habiller ?</h2>
+    <p class="intro-text">
+        Il fait sensiblement la même température toute l'année ~13 °C, avec le fait qu'on bouge pas mal on est
+        donc souvent en t-shirt
+    </p>
+    <ul>
+        <li class="item">
+            Un pull pour l'extérieur, il risque de faire froid à la sortie et même l'été se balader avec le t-shirt
+            dégueulasse c'est pas bien jojo
+        </li>
+        <li class="item">
+            Ne t'encombre pas avec des manteaux ou gros pulls, ils seront plus des boulets qu'autre chose sous terre
+        </li>
+        <li class="item">
+            Un jean auquel tu ne tiens pas trop, même s'il a peu de chance de se déchirer il risque de se faire
+            malmener dans les chatières ou autre. Pas de jogging, trop fragile il se déchirerait
+        </li>
+        <li class="item">De même pour le t-shirt, n'en prends pas un de grande valeur</li>
+        <li class="item">
+            Des chaussures qui permettent de bien marcher, basket, chaussures de randonnée sont très bien,
+            mais tu auras certainement les pieds mouillés, des cuissardes sont recommandées si tu ne veux pas te
+            mouiller les petons (les bottes sont une fausse bonne idée, elles vont prendre l'eau à coup sûr,
+            autant avoir des chaussures où l'eau va pouvoir s'évacuer)
+        </li>
+        <li class="item">Si tu as des gants, c'est toujours plus agréable mais clairement pas obligatoire</li>
+        <li class="item">
+            Un couvre-chef (casque, casquette, bonnet, etc.) peut être utile pour éviter de se cogner la tête trop violemment.
+        </li>
+    </ul>
+
+    <h2 id="remarques">🦴 Remarques diverses</h2>
+    <ul>
+        <li class="item">
+            Les catacombes sont un lieu privilégié et préservé (à peu près), continuons de le préserver et ne
+            laissons aucun déchet derrière nous, mégots de cigarette, emballage de nourriture, etc. Tout remonte à la
+            surface, au-delà de la propreté des lieux laisser de la nourriture fait que des rats s'installent
+            progressivement et ils n'ont absolument rien à y faire, fais donc attention à ne rien jeter !
+        </li>
+        <li class="item">
+            On évite généralement de faire ses besoins dans les catacombes, même s'il arrive qu'on y soit contraint,
+            pensez à bien faire vos commissions avant de descendre, ce sera toujours plus propre !
+        </li>
+        <li class="item">
+            En fonction du parcours effectué on peut être amené à marcher dans l'eau, potentiellement jusqu'en haut
+            des cuisses (même si la plupart du temps ça ne dépassera pas le genou)
+        </li>
+        <li class="item">
+            On m'a déjà posé la question mais oui, on peut fumer dans les catas, il faut penser à ramasser ses mégots
+        </li>
+        <li class="item">
+            Il se peut par moment que l'on soit à une longue distance de la sortie (le maximum doit être 2h, 2h30),
+            si tu commences à fatiguer (ou si simplement tu veux sortir), surtout n'hésite pas à le mentionner au
+            guide dès les premiers signes, car même s'il se dirige vers la sortie immédiatement il peut rester une
+            trotte à parcourir !
+        </li>
+    </ul>
+
+    <h2 id="jargon">🦴 Jargon</h2>
+    <div class="jargon">
+        <details>
+            <summary>Acet' (ou aceto')</summary>
+            <p>Une <a href="https://fr.wikipedia.org/wiki/Lampe_%C3%A0_ac%C3%A9tyl%C3%A8ne" target="_blank" rel="noopener noreferrer">lampe à acétylène</a>
+            qui est un moyen de s'éclairer assez peu commun sous terre, car peu pratique, mais il est encore possible d'en croiser</p>
+        </details>
+        <details>
+            <summary>Catablaz</summary>
+            <p>Le nom d'un cataphile après son baptême, il ne répondra que sous ce nom sous terre, ceux qui descendent sans être
+            baptisés ont d'office le catablaz <em>"touriste"</em> ou <em>"ristou"</em>. Les baptêmes ont traditionnellement lieu à la fontaine des Chartreux.</p>
+        </details>
+        <details>
+            <summary>Cataconnard</summary>
+            <p>Un cataphile connard 🙃</p>
+        </details>
+        <details>
+            <summary>Cataflic</summary>
+            <p>Les policiers de <a href="https://www.prefecturedepolice.interieur.gouv.fr/presentation/les-directions-et-services/directions-de-police-active/la-direction-de-lordre-public-et-de-la-circulation" target="_blank" rel="noopener noreferrer">la direction de l'ordre public et de la circulation</a>
+            qui descendent occasionnellement dans les catacombes (généralement depuis l'escalier de la Santé)</p>
+        </details>
+        <details>
+            <summary>Catalampe</summary>
+            <p>Une <a href="https://live.staticflickr.com/3755/8874648611_267016bb14_n.jpg" target="_blank" rel="noopener noreferrer">lampe de fortune</a>
+            confectionnée avec une cannette de bière et une bougie</p>
+        </details>
+        <details>
+            <summary>Cataphile</summary>
+            <p>Une personne qui descend régulièrement dans les catas</p>
+        </details>
+        <details>
+            <summary>Catatract (ou tract)</summary>
+            <p>Tract déposé dans les catacombes, initialement destiné à communiquer sous terre en se laissant des mots
+            à des endroits convenus, ils ont aujourd'hui perdu cette fonction pratique et sont des petits mots/photos laissés par
+            un cataphile pour que quelqu'un le trouve.
+            <a href="tracts.html">voici une liste des tracts que j'ai pu trouver</a></p>
+        </details>
+        <details>
+            <summary>Chatière</summary>
+            <p>Un passage étroit creusé par les cataphiles pour contourner les murs et autres injections de l'IGC.</p>
+        </details>
+        <details>
+            <summary>GRS</summary>
+            <p>Grand Réseau Sud, le plus gros réseau d'anciennes carrières sous Paris, ce réseau court du Jardin du Luxembourg
+            à Montrouge (auparavant il était possible d'aller jusqu'à Cachan par le GRS), il existe d'autres réseaux sous Paris
+            tel que le "13" ou le "16" (par rapport aux arrondissements où ils se situent)</p>
+        </details>
+        <details>
+            <summary>Phiphi (ou Fifi)</summary>
+            <p>Surnom de Philibert Aspairt (ou Asper) un carrier du Val de Grâce qui serait descendu dans les catacombes avec
+            l'objectif de voler de l'alcool des Chartreux, il aurait cassé sa lampe sous terre et aurait été retrouvé mort le
+            2 Floréal de l'an XII (2 Mai 1804), une tombe est érigée à l'endroit où il aurait été retrouvé. C'est un sempiternel
+            débat de cataphiles de savoir si Phiphi a réellement existé ou si ce serait une invention d'<a href="https://fr.wikipedia.org/wiki/Louis-%C3%89tienne_H%C3%A9ricart_de_Thury" target="_blank" rel="noopener noreferrer">Héricart de Thury</a></p>
+        </details>
+        <details>
+            <summary>Fontis</summary>
+            <p>Un <a href="https://fr.wikipedia.org/wiki/Fontis" target="_blank" rel="noopener noreferrer">fontis</a> est un effondrement du ciel de carrière.
+            Ce phénomène très dangereux guette toutes les carrières non entretenues.</p>
+        </details>
+        <details>
+            <summary>IGC</summary>
+            <p>L'<a href="https://fr.wikipedia.org/wiki/Inspection_g%C3%A9n%C3%A9rale_des_carri%C3%A8res" target="_blank" rel="noopener noreferrer">Inspection Générale des Carrières</a>
+            fut fondée en 1777 pour répertorier et consolider les vides de carrières en Ile-de-France.</p>
+        </details>
+        <details>
+            <summary>Injection</summary>
+            <p>L'injection de béton est la méthode moderne de consolidation des carrières utilisée par l'IGC. C'est aussi le moyen retenu pour fermer les accès.</p>
+        </details>
+        <details>
+            <summary>Katasprint</summary>
+            <p>Une course organisée entre deux points donnés, le choix de l'itinéraire étant libre. Ainsi un cataphile qui court
+            n'est pas forcément un cataphile pris en chasse par la police.</p>
+        </details>
+        <details>
+            <summary>Remblai</summary>
+            <p>Terre qui constitue la majorité des réseaux sous-terrain.</p>
+        </details>
+        <details>
+            <summary>Squat</summary>
+            <p>Une salle qui se situe dans un couloir.</p>
+        </details>
+        <details>
+            <summary>Surfacien</summary>
+            <p>Un habitant de la surface.</p>
+        </details>
+        <details>
+            <summary>Sylvie</summary>
+            <p>Major Sylvie Gautron de la DOPC, la cheffe des cataflics, elle est "aimée et mal aimée en même temps",
+            son prédécesseur Jean-Claude Saratte (qui a pris sa retraite en Juin 2000) privilégiait beaucoup la pédagogie à la répression.</p>
+        </details>
+        <details>
+            <summary>Touriste (ou Ristou)</summary>
+            <p>Nom donné aux cataphiles lors de leurs premières descentes.</p>
+        </details>
+    </div>
+
+    <h2 id="histoire">🦴 Histoire rapide</h2>
     <p class="item">
         Ce bref paragraphe est une remise en contexte mais, il existe une multitude de sites qui documentent très bien
         l'histoire des catacombes, la création de l'Inspection Générale des Carrières etc... Le mieux est encore si
-        le sujet t'intéresses d'aller chercher par toi-même !
+        le sujet t'intéresse d'aller chercher par toi-même !
     </p>
     <p class="item">
         Près de trois cents kilomètres de galeries s'étalent sous Paris intra-muros, sur parfois trois niveaux de
         carrières. La profondeur moyenne est d'environ vingt mètres sous le niveau du sol naturel. Lorsque ces
         carrières étaient actives, on en extrayait de la pierre à bâtir, qui a permis pendant plusieurs siècles de
         construire les bâtiments de Paris sans importer d'autre matériau de construction.
-
+    </p>
+    <p class="item">
         On assimile abusivement les catacombes à l'ensemble des carrières de la capitale, bien qu'elles n'en
         représentent en réalité qu'une infime fraction.
-
+    </p>
+    <p class="item">
         Les catacombes sont à l'origine une partie des anciennes carrières souterraines situées dans le 14e
-        arrondissement de Paris,
-        reliées entre elles par des galeries d'inspection. Elles sont transformées en ossuaire municipal à la fin du
-        XVIIIème siècle avec le transfert des restes d'environ six millions d'individus, évacués des divers cimetières
-        parisiens jusqu'en 1861 pour des raisons de salubrité publique. Elles prennent alors le nom abusif de «
-        catacombes », par analogie avec les nécropoles souterraines de la Rome antique, bien qu'elles n'aient jamais
-        officiellement servi de lieu de sépulture.
+        arrondissement de Paris, reliées entre elles par des galeries d'inspection. Elles sont transformées en
+        ossuaire municipal à la fin du XVIIIe siècle avec le transfert des restes d'environ six millions d'individus,
+        évacués des divers cimetières parisiens jusqu'en 1861 pour des raisons de salubrité publique. Elles prennent
+        alors le nom abusif de « catacombes », par analogie avec les nécropoles souterraines de la Rome antique,
+        bien qu'elles n'aient jamais officiellement servi de lieu de sépulture.
     </p>
 
-    <h2>🦴 Quelques liens plus ou moins utiles</h2>
+    <h2 id="liens">🦴 Quelques liens plus ou moins utiles</h2>
+    <ul>
+        <li class="item">
+            <a href="tracts.html">Archive des tracts</a> — liste des catatracts que j'ai pu trouver au fil de mes descentes
+        </li>
+        <li class="item">
+            <a href="https://www.instagram.com/memes_souterrains/" target="_blank" rel="noopener noreferrer">Memes sous ter 1</a> — page insta de memes
+        </li>
+        <li class="item">
+            <a href="https://www.instagram.com/cataphile.culture/" target="_blank" rel="noopener noreferrer">Centre culturel de la cataphilie</a> — page insta de memes
+        </li>
+        <li class="item">
+            <a href="https://www.instagram.com/meme_de_remblais/" target="_blank" rel="noopener noreferrer">Memes de remblais</a> — page insta de memes
+        </li>
+        <li class="item">
+            <a href="https://www.instagram.com/memesremblayes/" target="_blank" rel="noopener noreferrer">Memes remblayés</a> — page insta de memes
+        </li>
+        <li class="item">
+            <a href="https://lemondesouterrain.fr/" target="_blank" rel="noopener noreferrer">Le monde souterrain</a> — un fanzine distribué entre 2020 et 2022, les exemplaires du zine sont consultables et sont assez intéressants.
+        </li>
+        <li class="item">
+            <a href="http://grospipeau.org/" target="_blank" rel="noopener noreferrer">Gros pipeau</a> — un fanzine distribué entre 1996 et 2000, tout comme le monde souterrain il est consultable en ligne, mais il a une portée beaucoup plus "petite information" voire "intox".
+        </li>
+        <li class="item">
+            <a href="http://ktakafka.free.fr/index.htm" target="_blank" rel="noopener noreferrer">KTA Kafka</a> — le site personnel d'un cataphile qui y met plein de ressources utiles et intéressantes, le site est assez daté et s'adresse plutôt à des gens qui ont de bonnes connaissances souterraines.
+        </li>
+    </ul>
 
-    <p>
-        <li class="item">
-            <a href="https://www.instagram.com/memes_souterrains/">Memes sous ter 1</a> page insta de memes
-        </li>
-    </p>
-    <p>
-        <li>
-            <a href="https://www.instagram.com/cataphile.culture/">Centre culturel de la cataphilie</a> page insta de memes
-        </li>
-    </p>
-    <p>
-        <li class="item">
-            <a href="https://www.instagram.com/meme_de_remblais/">Memes de remblais</a> page insta de memes
-        </li>
-    </p>
-    <p>
-        <li class="item">
-            <a href="https://www.instagram.com/memesremblayes/">Memes remblayés</a> page insta de memes
-        </li>
-    </p>
-    <p>
-        <li class="item">
-            <a href="https://lemondesouterrain.fr/" target="_blank">Le monde souterrain</a>, un fanzine distribué entre 2020 et 2022, les exemplaires du zine sont consultables et sont assez intéressants.
-        </li>
-    </p>
-    <p>
-        <li class="item">
-            <a href="http://grospipeau.org/" target="_blank">Gros pipeau</a>, un fanzine distribué entre 1996 et 2000, tout comme le monde souterrain il est consultable en ligne, mais il a une portée beaucoup plus "petite information" voir "intox".
-        </li>
-    </p>
+    </main>
 
-    <p>
-        <li class="item">
-            <a href="http://ktakafka.free.fr/index.htm" target="_blank">KTA Kafka</a>, le site personnel d'un cataphile qui y met tout pleins de ressources utiles et intéressantes, le site est assez daté et s'adresse plutôt à des gens qui ont de bonnes connaissances souterraine.
-        </li>
-    </p>
+    <a href="#" id="back-to-top" aria-label="Retour en haut">↑</a>
 
 </body>
+</html>

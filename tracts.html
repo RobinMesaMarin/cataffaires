@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Archive personnelle des catatracts trouvés dans les catacombes de Paris.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.15s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .page-intro {
+            background: var(--bg-glass);
+            backdrop-filter: blur(var(--blur));
+            -webkit-backdrop-filter: blur(var(--blur));
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.8rem;
+            margin: 0.8rem 0 0;
+            color: #c0b8a8;
+            font-style: italic;
+        }
+
+        /* ── Recherche ── */
+
+        .search-bar {
+            margin: 1rem 0 0;
+        }
+
+        #search {
+            width: 100%;
+            background: var(--bg-glass);
+            backdrop-filter: blur(var(--blur));
+            -webkit-backdrop-filter: blur(var(--blur));
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            padding: 0.65rem 1.1rem;
+            color: var(--color-text);
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        #search::placeholder {
+            color: var(--color-text-muted);
+        }
+
+        #search:focus {
+            border-color: rgba(var(--color-accent-rgb), 0.45);
+        }
+
+        .no-results {
+            display: none;
+            color: var(--color-text-muted);
+            font-style: italic;
+            font-size: 0.9rem;
+            padding: 1rem 0;
+        }
+
+        /* ── Grille ── */
+
+        .tracts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 5rem;
+        }
+
+        /* ── Cartes ── */
+
+        .tract-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(var(--blur));
+            -webkit-backdrop-filter: blur(var(--blur));
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s ease;
+        }
+
+        .tract-card:hover {
+            border-color: rgba(var(--color-accent-rgb), 0.25);
+        }
+
+        .tract-images {
+            display: flex;
+            gap: 2px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .tract-images a {
+            flex: 1;
+            min-width: 0;
+            display: block;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+        .tract-images img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.25s ease;
+        }
+
+        .tract-images a:hover img {
+            transform: scale(1.04);
+        }
+
+        .tract-body {
+            padding: 1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .tract-card-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .tract-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.92rem;
+            color: var(--color-accent);
+            margin: 0;
+            letter-spacing: 0.03em;
+            line-height: 1.4;
+        }
+
+        .tract-date {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.06em;
+        }
+
+        .tract-dates {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .tract-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2rem 1rem;
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            border-top: 1px solid var(--border-glass);
+            padding-top: 0.5rem;
+            margin-top: auto;
+        }
+
+        .tract-meta span { display: flex; align-items: baseline; gap: 0.3rem; }
+        .tract-location::before { content: '📍'; }
+        .tract-blaze::before    { content: '✍️'; }
+        .tract-num::before      { content: '🔢'; }
+
+        /* ── Lightbox ── */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.93);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            background: none;
+            border: none;
+            color: var(--color-text-muted);
+            font-size: 1.8rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: color 0.15s ease;
+            padding: 0;
+        }
+
+        .lightbox-close:hover { color: #ffffff; }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--color-text-muted);
+            font-size: 1.6rem;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.15s ease, background 0.15s ease;
+        }
+
+        .lightbox-nav:hover { color: #ffffff; background: rgba(0, 0, 0, 0.8); }
+        .lightbox-nav:disabled { opacity: 0.15; cursor: default; pointer-events: none; }
+        .lightbox-nav:disabled:hover { color: var(--color-text-muted); background: rgba(0, 0, 0, 0.5); }
+
+        #lb-prev { left: 1rem; }
+        #lb-next { right: 1rem; }
+
+        @media (max-width: 480px) {
+            .tracts-grid { grid-template-columns: 1fr; }
+            .lightbox-nav { display: none; }
+        }
+    </style>
+    <title>💀 Catatracts 💀</title>
+</head>
+
+<body>
+    <main>
+        <a href="index.html" class="back-link">← Retour au guide</a>
+
+        <h1>Archive des tracts</h1>
+
+        <p class="page-intro">
+            <span id="tract-count">…</span> tracts répertoriés. Un tract est un petit mot ou une photo laissé par un cataphile
+            à l'intention de celui qui le trouvera —
+            voir la <a href="index.html#jargon">définition complète dans le jargon</a>.
+            Cliquer sur une image pour l'agrandir.
+        </p>
+
+        <div class="search-bar">
+            <input type="search" id="search" placeholder="Rechercher par titre, blaze, lieu…" autocomplete="off">
+        </div>
+
+        <p class="no-results" id="no-results">Aucun tract ne correspond à cette recherche.</p>
+
+        <div class="tracts-grid" id="tracts-grid"></div>
+    </main>
+
+    <a href="#" id="back-to-top" aria-label="Retour en haut">↑</a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image agrandie">
+        <button class="lightbox-close" id="lb-close" aria-label="Fermer">✕</button>
+        <button class="lightbox-nav" id="lb-prev" aria-label="Image précédente">‹</button>
+        <img id="lb-img" src="" alt="">
+        <button class="lightbox-nav" id="lb-next" aria-label="Image suivante">›</button>
+    </div>
+
+    <script>
+        /* ── Données ── */
+
+        let allTracts = [];
+
+        /* ── Utilitaires ── */
+
+        function esc(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        /* ── Rendu des cartes ── */
+
+        function renderDates(tract) {
+            if (tract.date_posee && tract.date_trouvee) {
+                return `<div class="tract-dates">
+                    <span class="tract-date">Posé : ${esc(tract.date_posee)}</span>
+                    <span class="tract-date">Trouvé : ${esc(tract.date_trouvee)}</span>
+                </div>`;
+            }
+            if (tract.date_posee)   return `<span class="tract-date">Posé : ${esc(tract.date_posee)}</span>`;
+            if (tract.date_trouvee) return `<span class="tract-date">Trouvé : ${esc(tract.date_trouvee)}</span>`;
+            return `<span class="tract-date">—</span>`;
+        }
+
+        function renderCard(tract) {
+            const images = tract.images.map((img, i) => {
+                const side = tract.images.length > 1 ? (i === 0 ? ' — recto' : ' — verso') : '';
+                return `<a href="img/tracts/${esc(img)}" target="_blank" rel="noopener noreferrer">
+                    <img src="img/tracts/${esc(img)}" alt="${esc(tract.titre)}${side}" loading="lazy">
+                </a>`;
+            }).join('');
+
+            const blaze = tract.blaze
+                ? (tract.blaze_instagram
+                    ? `<a href="${esc(tract.blaze_instagram)}" target="_blank" rel="noopener noreferrer">${esc(tract.blaze)}</a>`
+                    : esc(tract.blaze))
+                : '—';
+
+            return `<div class="tract-card">
+                <div class="tract-images">${images}</div>
+                <div class="tract-body">
+                    <div class="tract-card-header">
+                        <h3 class="tract-title">${esc(tract.titre)}</h3>
+                        ${renderDates(tract)}
+                    </div>
+                    <div class="tract-meta">
+                        <span class="tract-location" title="Lieu">${tract.lieu ? esc(tract.lieu) : '—'}</span>
+                        <span class="tract-blaze" title="Blaze">${blaze}</span>
+                        <span class="tract-num" title="Numérotation">${tract.numerotation ? esc(tract.numerotation) : '—'}</span>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        /* ── Chargement ── */
+
+        fetch('tracts.json')
+            .then(r => r.json())
+            .then(tracts => {
+                allTracts = tracts;
+                document.getElementById('tract-count').textContent = tracts.length;
+                document.getElementById('tracts-grid').innerHTML = tracts.map(renderCard).join('');
+            })
+            .catch(() => {
+                document.getElementById('tracts-grid').innerHTML =
+                    '<p style="color:var(--color-text-muted)">Impossible de charger les tracts.</p>';
+            });
+
+        /* ── Recherche ── */
+
+        document.getElementById('search').addEventListener('input', function () {
+            const q = this.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.tract-card');
+            let visible = 0;
+
+            cards.forEach((card, i) => {
+                const t = allTracts[i];
+                const match = !q
+                    || t.titre.toLowerCase().includes(q)
+                    || (t.blaze && t.blaze.toLowerCase().includes(q))
+                    || (t.lieu  && t.lieu.toLowerCase().includes(q));
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+
+            document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+        });
+
+        /* ── Lightbox ── */
+
+        let lbImages = [];
+        let lbIndex  = 0;
+
+        const lightbox = document.getElementById('lightbox');
+        const lbImg    = document.getElementById('lb-img');
+        const lbPrev   = document.getElementById('lb-prev');
+        const lbNext   = document.getElementById('lb-next');
+
+        function lbOpen(images, index) {
+            lbImages = images;
+            lbIndex  = index;
+            lbUpdate();
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function lbClose() {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        function lbUpdate() {
+            lbImg.src = lbImages[lbIndex].src;
+            lbImg.alt = lbImages[lbIndex].alt;
+            const single = lbImages.length === 1;
+            lbPrev.disabled = single || lbIndex === 0;
+            lbNext.disabled = single || lbIndex === lbImages.length - 1;
+        }
+
+        /* Délégation : intercepte les clics sur les liens d'images */
+        document.getElementById('tracts-grid').addEventListener('click', function (e) {
+            const link = e.target.closest('.tract-images a');
+            if (!link) return;
+            e.preventDefault();
+            const card    = link.closest('.tract-card');
+            const allLinks = [...card.querySelectorAll('.tract-images a')];
+            const images  = allLinks.map(a => ({ src: a.href, alt: a.querySelector('img').alt }));
+            lbOpen(images, allLinks.indexOf(link));
+        });
+
+        document.getElementById('lb-close').addEventListener('click', lbClose);
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) lbClose(); });
+
+        lbPrev.addEventListener('click', () => { if (lbIndex > 0) { lbIndex--; lbUpdate(); } });
+        lbNext.addEventListener('click', () => { if (lbIndex < lbImages.length - 1) { lbIndex++; lbUpdate(); } });
+
+        document.addEventListener('keydown', e => {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape')      lbClose();
+            if (e.key === 'ArrowLeft'  && lbIndex > 0)                      { lbIndex--; lbUpdate(); }
+            if (e.key === 'ArrowRight' && lbIndex < lbImages.length - 1)    { lbIndex++; lbUpdate(); }
+        });
+    </script>
+</body>
+</html>

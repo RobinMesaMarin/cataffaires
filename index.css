@@ -1,38 +1,372 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-body {
-    padding: 2%;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+/* ── Variables ── */
+
+:root {
+    --color-accent:      #e8c98a;
+    --color-accent-rgb:  232, 201, 138;
+    --color-accent-dim:  #c8b87a;
+    --color-text:        #f0ece4;
+    --color-text-muted:  #9e9488;
+    --color-link:        #e05050;
+    --color-link-hover:  #ff8080;
+    --bg-glass:          rgba(0, 0, 0, 0.52);
+    --border-glass:      rgba(255, 255, 255, 0.07);
+    --blur:              6px;
+    --radius:            10px;
+}
+
+/* ── Base ── */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
     background-image: url("img/bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    color:white;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 90vw;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3% 5% 5rem;
+    color: var(--color-text);
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
+    line-height: 1.75;
 }
 
-body h1 {
-    text-align: center;
-    margin-top:2%
-}
+/* ── Titres ── */
 
-a {
-    color: red;
-}
-
-a:hover{
-    color:darkred;
-}
-
-.item{
-    width: 90vw;
-}
-li:before { content: '💀'; margin-left: -20px; margin-right: 10px; } 
-
-title, h1, h2, h3 {
+h1, h2, h3 {
     font-family: 'Cinzel', serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #ffffff;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.95);
+    margin: 2.5rem 0 2rem;
+}
+
+h2 {
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: 0.07em;
+    color: var(--color-accent);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.3);
+    padding-bottom: 0.5rem;
+    margin: 2.8rem 0 0;
+}
+
+h3 {
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    color: var(--color-accent-dim);
+    margin: 1.8rem 0 0.3rem;
+}
+
+/* ── Sommaire ── */
+
+#toc {
+    border-left: 2px solid rgba(var(--color-accent-rgb), 0.45);
+    padding: 0.2rem 0 0.2rem 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+}
+
+#toc ul {
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    counter-reset: toc-counter;
+}
+
+#toc li {
+    counter-increment: toc-counter;
+    margin-bottom: 0.25rem;
+}
+
+#toc li:last-child {
+    margin-bottom: 0;
+}
+
+#toc li::before {
+    content: counter(toc-counter, decimal-leading-zero) '.';
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-right: 0.6rem;
+    margin-left: 0;
+}
+
+#toc li a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.92rem;
+    color: #d4c4a0;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+#toc li a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ── Blocs de contenu ── */
+
+ul {
+    list-style: none;
+    padding: 1.4rem 1.8rem 1.4rem 2.8rem;
+    margin: 0.8rem 0 0;
+    background: var(--bg-glass);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius);
+}
+
+/* Paragraphes autonomes (Histoire, intro tenue) */
+main > p.item,
+p.intro-text {
+    background: var(--bg-glass);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.8rem;
+    margin: 0.8rem 0 0;
+}
+
+p.intro-text {
+    font-style: italic;
+    color: #c0b8a8;
+}
+
+/* ── Éléments de liste ── */
+
+li {
+    margin-bottom: 0.9rem;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+li::before {
+    content: '💀';
+    margin-left: -20px;
+    margin-right: 10px;
+}
+
+.item {
+    width: 100%;
 }
 
 .smoll {
     font-size: 12px;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    display: block;
+}
+
+/* ── Liens ── */
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.18s ease;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+/* ── Accordéon Jargon ── */
+
+.jargon {
+    background: var(--bg-glass);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 0.8rem 0 0;
+}
+
+details {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+details:last-child {
+    border-bottom: none;
+}
+
+summary {
+    padding: 0.75rem 1.4rem;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: var(--color-accent);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    user-select: none;
+    transition: background 0.15s ease;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '💀';
+    font-size: 0.8em;
+    flex-shrink: 0;
+}
+
+summary::after {
+    content: '▾';
+    margin-left: auto;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    transition: transform 0.2s ease;
+}
+
+details[open] > summary {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+details[open] > summary::after {
+    transform: rotate(-180deg);
+}
+
+details > p {
+    margin: 0;
+    padding: 0.8rem 1.4rem 1rem 1.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--color-text);
+    line-height: 1.75;
+}
+
+/* ── Bouton retour en haut ── */
+
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(var(--color-accent-rgb), 0.4);
+    border-radius: 50%;
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    z-index: 100;
+}
+
+#back-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(var(--color-accent-rgb), 0.9);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+    html {
+        background-attachment: scroll;
+    }
+
+    body {
+        padding: 5% 5% 5rem;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        margin: 1.5rem 0 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    ul {
+        padding: 1.1rem 1.4rem 1.1rem 2.4rem;
+    }
+
+    main > p.item,
+    p.intro-text {
+        padding: 1rem 1.4rem;
+    }
+
+    #back-to-top {
+        bottom: 1.2rem;
+        right: 1.2rem;
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 6% 4% 5rem;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        letter-spacing: 0.07em;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    ul {
+        padding: 0.9rem 1.1rem 0.9rem 2.1rem;
+    }
+
+    .smoll {
+        font-size: 11px;
+    }
 }
