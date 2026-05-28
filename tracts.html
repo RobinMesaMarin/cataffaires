@@ -182,6 +182,9 @@
         function lbUpdate() {
             lbImg.src = lbImages[lbIndex].src;
             lbImg.alt = lbImages[lbIndex].alt;
+            const pad = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            lbImg.style.maxWidth  = (window.innerWidth  - pad * 10) + 'px';
+            lbImg.style.maxHeight = (window.innerHeight - pad * 8)  + 'px';
             const single = lbImages.length === 1;
             lbPrev.disabled = single || lbIndex === 0;
             lbNext.disabled = single || lbIndex === lbImages.length - 1;

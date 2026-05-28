@@ -170,7 +170,7 @@
     "incertitudes": [
       "lieu"
     ],
-    "blaze": "Aggripa",
+    "blaze": "Agrippa",
     "blaze_instagram": "https://www.instagram.com/agrippa1777/",
     "numerotation": null,
     "images": [
@@ -210,7 +210,7 @@
     "titre": "Jigsaw",
     "date_posee": null,
     "date_trouvee": null,
-    "lieu": "Catapulte",
+    "lieu": "Le dépôt",
     "incertitudes": [
       "lieu"
     ],
@@ -295,6 +295,20 @@
     "numerotation": null,
     "images": [
       "image31.webp"
+    ]
+  },
+  {
+    "titre": "Finally du rat-nioc",
+    "date_posee": "Mars 2026",
+    "date_trouvee": "Mai 2026",
+    "lieu": "Trône d'ossement",
+    "blaze": "Agrippa",
+    "notes": "Contient une inscription raturée \"CHTONIEN, DANCE MACABRE ET ELEMENT\"",
+    "blaze_instagram": "https://www.instagram.com/agrippa1777/",
+    "numerotation": "N 33 / Tractember 2025 N°44",
+    "images": [
+      "image36.webp",
+      "image37.webp"
     ]
   }
 ]
